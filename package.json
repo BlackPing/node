@@ -1,0 +1,28 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Git Connection",
+  "main": "app.js",
+  "scripts": {
+    "serve": "nodemon --exec npx babel-node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackPing/node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlackPing/node/issues"
+  },
+  "homepage": "https://github.com/BlackPing/node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "nodemon": "^1.19.4"
+  }
+}
