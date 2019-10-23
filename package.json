@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/BlackPing/node#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

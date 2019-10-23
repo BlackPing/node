@@ -22,3 +22,9 @@ babel을 통해 es6 문법을 컴파일하여 node를 실행
 
 ## NodeJS 4강 : express middleware
 express의 middleware처리
+
+## NodeJS 5강 : MySql 연동
++ Centos7 MySql 설치
+    * UTF-8 설정
+    * MySQL 연동
+    * 쿼리문 테스트

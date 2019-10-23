@@ -1,5 +1,6 @@
 console.time('Server ON Time2');
 import express from 'express';
+import DB from './db';
 const app = express();
 
 class component {
@@ -11,14 +12,22 @@ class component {
 
     middleware(app) {
         app.use('/node', function(req, res, next) {
-            var nodeman = Number(req.query.nodeman);
-            console.log(nodeman);
-            if(isNaN(nodeman)) {
-                console.log('NaNcheck');
-                next('isNaN detecting');
-            } else {
-                next();
-            }
+            DB('GET', "select 1 as cnt", []).then(function(res) {
+                console.log('DB Connect Check')
+                console.log(res);
+            });
+            DB('GET', "select ID, PASSWORD from user", []).then(function(res) {
+                console.log('DB Query Test');
+                console.log(res);
+                console.log(res.row);
+            });
+            const columns = ['ID', 'PASSWORD', 'user'];
+            DB('GET', "select ??, ?? from ??", columns).then(function(res) {
+                console.log('DB Query Test2');
+                console.log(res);
+                console.log(res.row);
+            });
+            next('isNaN detecting');
         });
     }
 
