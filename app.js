@@ -9,6 +9,25 @@ class component {
         this.route = route;
     }
 
+    middleware(app) {
+        app.use('/node', function(req, res, next) {
+            var nodeman = Number(req.query.nodeman);
+            console.log(nodeman);
+            if(isNaN(nodeman)) {
+                console.log('NaNcheck');
+                next('isNaN detecting');
+            } else {
+                next();
+            }
+        });
+    }
+
+    errorhandle(app) {
+        app.use(function(err, req, res, next) {
+            res.send('Error Handle ' + err);
+        })
+    }
+
     routing(app) {
         for(var i = 0; i < this.route.path.length; i++) {
             app.get(this.route.path[i], function(req, res) {
@@ -26,5 +45,7 @@ class component {
 
 const server = new component(3000, '127.0.0.1', { path: ['/', '/node'] });
 
+server.middleware(app);
 server.routing(app);
+server.errorhandle(app);
 server.listen(app);
