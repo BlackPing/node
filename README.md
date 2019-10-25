@@ -31,3 +31,6 @@ express의 middleware처리
 ## NodeJS 6강 : 정적파일, 화면처리
 express static을 이용한 정적 파일 제공
 node 내장 모듈을 이용한 rendering
+
+## NodeJS 7강 : express route
+라우터 url 패턴 구성

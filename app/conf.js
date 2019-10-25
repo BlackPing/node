@@ -8,7 +8,8 @@ var conf = {
         database: "node",
         port: 3306,
         charset: 'utf8'
-    }
+    },
+    routePattern: ['/notice', require('../route/notice'), '/test', require('../route/test')],
 }
 
 module.exports = conf;

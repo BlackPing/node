@@ -3,6 +3,8 @@ import express from 'express';
 import DB from './db';
 import path from 'path';
 import render from './render';
+import { routePattern } from './conf';
+
 const app = express();
 
 app.use('/static', express.static(path.join(__dirname, '../static')));
@@ -42,10 +44,13 @@ class component {
     }
 
     routing(app) {
-        for(var i = 0; i < this.route.path.length; i++) {
-            app.get(this.route.path[i], function(req, res) {
-                render(res);
-            });
+        app.get('/', function(req, res) {
+            render(res);
+        });
+
+        for(var i = 0; i < routePattern.length; i = i + 2) {
+            console.log(`Router Create ${routePattern[i]}`);
+            app.use(routePattern[i], routePattern[i + 1]);
         }
     }
 
