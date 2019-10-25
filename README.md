@@ -28,3 +28,6 @@ express의 middleware처리
     * UTF-8 설정
     * MySQL 연동
     * 쿼리문 테스트
+## NodeJS 6강 : 정적파일, 화면처리
+express static을 이용한 정적 파일 제공
+node 내장 모듈을 이용한 rendering
